@@ -16,6 +16,22 @@ namespace ToDoApi.Controllers
             return Ok(TaskList);
         }
 
+        [HttpGet]
+        [Route("/GetTask/{id}")]
+        public ActionResult <work> GetTask ([FromRoute]int id) 
+        {
+            if(id != null)
+            {
+                var task = TaskList.FirstOrDefault(t=>t.Id==id);
+                if(task != null)
+                {
+                    return Ok(task);
+                }
+                return NotFound();
+            }
+            return BadRequest();
+        }
+
         [HttpPost]
         [Route("/Create")]
         public ActionResult CreateTask([FromBody] string name)
@@ -53,7 +69,8 @@ namespace ToDoApi.Controllers
         }
 
         [HttpPut]
-        public ActionResult UpdateTask(int id, string name)
+        [Route("/Update/{id}")]
+        public ActionResult UpdateTask([FromRoute]int id, work work)
         {
             if (id != null)
             {
@@ -62,7 +79,7 @@ namespace ToDoApi.Controllers
                 {
                     return NotFound();
                 }
-                taskToUpdate.Name = name;
+                taskToUpdate.Name = work.Name;
                 return Ok();
             }
             return BadRequest();
