@@ -64,7 +64,6 @@ namespace ToDoApi.Controllers
                 TaskList.Remove(taskToDelete);
                 return Ok();
             }
-
             return BadRequest();
         }
 

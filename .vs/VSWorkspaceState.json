@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ToDoApi"
   ],
-  "SelectedNode": "\\ToDoApi.sln",
+  "SelectedNode": "\\ToDoApi\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
