@@ -10,7 +10,7 @@ namespace ToDoApi.Controllers
         private static List<work> TaskList = new List<work>();
         private static int counter = 1;
 
-        [HttpGet]
+        [HttpGet]   
         public ActionResult<IEnumerable<work>> GetTasks()
         {
             return Ok(TaskList);
