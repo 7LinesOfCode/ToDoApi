@@ -11,7 +11,7 @@ var app = builder.Build();
 
 app.UseCors(options =>
 {
-    options.WithOrigins("https://localhost:7070");
+    options.AllowAnyOrigin();
     options.AllowAnyMethod();
     options.AllowAnyHeader();
 });
